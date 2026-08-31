@@ -1,18 +1,18 @@
-/* LGS starter — light paper storefront. Serif shop sign, charcoal type, navy accent. */
+/* LGS starter — stone storefront. Serif shop sign, black type, no cafe cream, no studio red. */
 :root {
-  --paper: #f5f0e6;
-  --paper-2: #fffdf8;
-  --paper-3: #ebe4d6;
-  --ink: #241f1a;
-  --ink-soft: #3d372f;
-  --muted: #6a6358;
-  --line: #d8cfc0;
-  --line-strong: #c4b8a4;
-  --navy: #1f3f5b;
-  --navy-soft: #e6eef4;
-  --navy-mid: #2c5474;
-  --open-ink: #1f3f5b;
-  --closed-ink: #6a6358;
+  --paper: #f6f6f4;
+  --paper-2: #ffffff;
+  --paper-3: #ecece8;
+  --ink: #171717;
+  --ink-soft: #2a2a2a;
+  --muted: #5c5c59;
+  --line: #e3e3de;
+  --line-strong: #c9c9c2;
+  --navy: #171717;
+  --navy-soft: #f0f0ec;
+  --navy-mid: #2e2e2e;
+  --open-ink: #1a6b46;
+  --closed-ink: #5c5c59;
   --space: clamp(1.35rem, 4.2vw, 3rem);
   --wide: 76rem;
   --radius: 0.55rem;
@@ -47,7 +47,7 @@ body {
 img, svg { max-width: 100%; display: block; }
 
 a {
-  color: var(--navy);
+  color: var(--ink);
   text-decoration: none;
   text-underline-offset: 0.18em;
 }

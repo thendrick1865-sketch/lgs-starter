@@ -36,7 +36,7 @@ Nav is real on both pages.
 
 ## Design notes
 
-Paper storefront: warm off-white, charcoal type, navy accent. Source Serif 4 for the shop name and headings, Source Sans 3 for body. Hours as a table. Events as calendar rows. Form fields are dark text on white inputs.
+Stone storefront: near-white, black type. Source Serif 4 for the shop name and headings, Source Sans 3 for body. Hours as a table. Events as calendar rows. Form fields are dark text on white inputs.
 
 ## Form
 
