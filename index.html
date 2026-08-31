@@ -58,8 +58,9 @@
         <h1 data-bind="SHOP_NAME">Shop Name</h1>
         <p class="lede" data-bind="TAGLINE">Hours, this week's events, pickup at the counter.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="events.html">This week's events</a>
-          <a class="btn btn-ghost" href="#contact">Pickup</a>
+          <a class="btn btn-primary" data-bind="PHONE" data-bind-href="PHONE" href="tel:+15550100140">(555) 010-0140</a>
+          <a class="btn btn-ghost" data-bind-href="MAPS_URL" href="https://www.google.com/maps/search/?api=1&query=Your+City+CA">Directions</a>
+          <a class="btn btn-ghost" href="events.html">This week</a>
         </div>
       </div>
       <aside class="hours-panel" aria-labelledby="hours-heading">
@@ -76,11 +77,11 @@
         <div>
           <p class="kicker" data-events-kicker>This week</p>
           <h2 id="tonight-heading">This week</h2>
-          <p class="sub">What the shop is running. Edit EVENTS in config.js.</p>
+          <p class="sub">Name, day, time, fee. Add one to your calendar from the listing.</p>
         </div>
         <a class="btn btn-ghost" href="events.html">Full list</a>
       </div>
-      <div class="event-list" data-events-home><noscript><p class="empty-week">Turn on JavaScript to load hours and this week from config.js.</p></noscript></div>
+      <div class="event-list" data-events-home><noscript><p class="empty-week">Turn on JavaScript to load hours and this week.</p></noscript></div>
     </section>
 
     <section class="section" aria-labelledby="room-heading">
@@ -88,7 +89,7 @@
         <div>
           <p class="kicker">The room</p>
           <h2 id="room-heading">Play space</h2>
-          <p class="sub">Swap this drawing for photos of the actual tables.</p>
+          <p class="sub">Tables, counter, windows.</p>
         </div>
       </div>
       <figure class="room">
@@ -180,7 +181,7 @@
             <rect x="600" y="404" width="28" height="10" rx="2"/>
           </g>
         </svg>
-        <figcaption class="room-caption">Replace with phone photos of the room</figcaption>
+        <figcaption class="room-caption">The room</figcaption>
       </figure>
     </section>
 
@@ -215,7 +216,7 @@
         <div>
           <p class="kicker">The shop</p>
           <h2 id="contact-heading">Contact</h2>
-          <p class="sub">Address, phone, hours. Discord and Facebook if the shop uses them.</p>
+          <p class="sub">Call, get directions, or send a note.</p>
         </div>
       </div>
       <div class="contact-grid">
@@ -235,8 +236,8 @@
             <dd><a data-bind="EMAIL" data-bind-href="EMAIL" href="mailto:hello@shop-name.example">hello@shop-name.example</a></dd>
           </div>
           <div>
-            <dt>Maps</dt>
-            <dd><a data-bind-href="MAPS_URL" href="https://www.google.com/maps/search/?api=1&query=Your+City+CA">Google Maps placeholder</a></dd>
+            <dt>Directions</dt>
+            <dd><a data-bind-href="MAPS_URL" href="https://www.google.com/maps/search/?api=1&query=Your+City+CA">Open in Google Maps</a></dd>
           </div>
           <div>
             <dt>Community</dt>
@@ -253,7 +254,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="">
-          <p class="form-hint">Goes to the shop email in config.js.</p>
+          <p class="form-hint">Goes to the shop email.</p>
           <label>
             Name
             <input type="text" name="name" autocomplete="name" required>

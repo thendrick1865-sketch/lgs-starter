@@ -168,9 +168,8 @@
   function eventCard(ev, opts) {
     opts = opts || {};
     var when = nextDateForWeekday(ev.weekday, ev.time, ev.durationMin);
-    var article = document.createElement(opts.link ? "a" : "article");
+    var article = document.createElement("article");
     article.className = "event-row";
-    if (opts.link) article.setAttribute("href", opts.link);
 
     var whenEl = document.createElement("div");
     whenEl.className = "event-when";
@@ -218,6 +217,14 @@
       meta.appendChild(np);
     }
 
+    var cal = document.createElement("a");
+    cal.className = "event-cal";
+    cal.textContent = "Add to calendar";
+    cal.setAttribute("href", calendarUrl(ev, when));
+    cal.setAttribute("target", "_blank");
+    cal.setAttribute("rel", "noopener noreferrer");
+    meta.appendChild(cal);
+
     body.appendChild(meta);
     article.appendChild(whenEl);
     article.appendChild(body);
@@ -258,6 +265,35 @@
         week.forEach(function (ev) { all.appendChild(eventCard(ev)); });
       }
     }
+  }
+
+
+  function calendarUrl(ev, when) {
+    var start = when.date.replace(/-/g, "") + "T" + String(ev.time).replace(":", "") + "00";
+    var endMin = parseHm(ev.time) + (ev.durationMin || 120);
+    var eh = String(Math.floor(endMin / 60) % 24).padStart(2, "0");
+    var em = String(endMin % 60).padStart(2, "0");
+    var end = when.date.replace(/-/g, "") + "T" + eh + em + "00";
+    var q = [
+      "action=TEMPLATE",
+      "text=" + encodeURIComponent(ev.name + " — " + SHOP.SHOP_NAME),
+      "dates=" + start + "/" + end,
+      "ctz=" + encodeURIComponent(SHOP.TIMEZONE || "America/Los_Angeles"),
+      "location=" + encodeURIComponent((SHOP.ADDRESS || "") + ", " + (SHOP.CITY || "")),
+      "details=" + encodeURIComponent(ev.blurb || ev.game || "")
+    ].join("&");
+    return "https://calendar.google.com/calendar/render?" + q;
+  }
+
+  function isDummyUrl(val) {
+    if (!val) return true;
+    return /your-invite|your-shop|example\.com|placeholder/i.test(String(val));
+  }
+
+  function hideDummyLinks() {
+    document.querySelectorAll(".socials a, [data-bind-href=DISCORD], [data-bind-href=FACEBOOK], [data-bind-href=INSTAGRAM]").forEach(function (a) {
+      if (isDummyUrl(a.getAttribute("href"))) a.hidden = true;
+    });
   }
 
   function renderCarry() {
@@ -416,6 +452,7 @@
   }
 
   bindText();
+  hideDummyLinks();
   renderLeds();
   renderHours();
   renderEvents();
@@ -425,4 +462,5 @@
   setupForm();
   injectJsonLd();
   nav();
+  setInterval(renderLeds, 30000);
 })();

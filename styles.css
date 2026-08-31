@@ -461,6 +461,15 @@ a.event-row:hover {
   margin-right: 0.65rem;
   color: var(--line-strong);
 }
+.event-cal {
+  color: var(--lamp);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  font-weight: 600;
+}
+.event-cal:hover { color: var(--ink); }
+.socials a[hidden] { display: none; }
+
 
 .empty-week {
   border: 1px dashed var(--line-strong);

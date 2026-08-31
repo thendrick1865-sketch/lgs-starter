@@ -54,10 +54,11 @@
     <section class="hero page-hero">
       <p class="kicker">This week</p>
       <h1>Events</h1>
-      <p class="lede">Name, game, day, time, fee. Pulled from config.js so the calendar is the source of truth.</p>
+      <p class="lede">Name, game, day, time, fee. Add an event to your calendar from the listing.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="index.html#contact">Hours &amp; contact</a>
-        <a class="btn btn-ghost" href="index.html">Home</a>
+        <a class="btn btn-primary" data-bind="PHONE" data-bind-href="PHONE" href="tel:+15550100140">(555) 010-0140</a>
+        <a class="btn btn-ghost" href="index.html#hours">Hours</a>
+        <a class="btn btn-ghost" href="index.html#contact">Contact</a>
       </div>
     </section>
 
@@ -65,10 +66,10 @@
       <div class="section-head">
         <div>
           <h2 id="week-heading">On the calendar</h2>
-          <p class="sub">This week, from the shop calendar.</p>
+          <p class="sub">This week. Times are the door times.</p>
         </div>
       </div>
-      <div class="event-list" data-events-all><noscript><p class="empty-week">Turn on JavaScript to load this week from config.js.</p></noscript></div>
+      <div class="event-list" data-events-all><noscript><p class="empty-week">Turn on JavaScript to load this week.</p></noscript></div>
     </section>
   </main>
 
