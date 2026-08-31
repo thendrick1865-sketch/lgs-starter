@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090b">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f5f0e6">
+  <meta name="color-scheme" content="light">
   <title>Events · SHOP_NAME</title>
   <meta name="description" content="This week's events at SHOP_NAME in Your City, CA.">
   <meta property="og:title" content="Events — SHOP_NAME">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -23,11 +23,10 @@
       <span class="brand-city" data-bind="CITY">Your City, CA</span>
     </a>
     <div class="header-tools">
-      <span class="led" data-led role="status" aria-live="polite">
-        <span class="led-dot" aria-hidden="true"></span>
+      <p class="hours-status" data-led role="status" aria-live="polite">
         <span data-led-status>Hours</span>
-        <span class="led-until" data-led-until></span>
-      </span>
+        <span class="hours-until" data-led-until></span>
+      </p>
       <nav class="nav-desktop" data-nav aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="events.html">Events</a>
@@ -69,7 +68,7 @@
           <p class="sub">This week, from the shop calendar.</p>
         </div>
       </div>
-      <div class="cards cards-3" data-events-all><noscript><p class="empty-week">Turn on JavaScript to load this week from config.js.</p></noscript></div>
+      <div class="event-list" data-events-all><noscript><p class="empty-week">Turn on JavaScript to load this week from config.js.</p></noscript></div>
     </section>
   </main>
 

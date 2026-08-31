@@ -21,22 +21,22 @@ All of them live in `config.js` as `window.SHOP`.
 
 Then, still in `config.js`, fill **EVENTS** (name, game, weekday, time, fee, new-player flag) so this week is not empty. Optional: **CARRY**, **NEW_PLAYERS**, **POLICY**, **PREORDER_NOTE**, **TIMEZONE**.
 
-`TIMEZONE` defaults to `America/Los_Angeles` so the OPEN LED matches a California door. Change it if the shop is not on Pacific time.
+`TIMEZONE` defaults to `America/Los_Angeles` so Open / Closed matches a California door. Change it if the shop is not on Pacific time.
 
 ## What the owner should feel on a phone
 
-Hours that match the door. An OPEN / CLOSED LED. Tonight / this week as cards. A drawing of the play space (not a stock photo). Pickup / preorder at the counter. Discord and Facebook. How Friday night actually works.
+Hours that match the door. Plain Open / Closed text. Tonight / this week as a calendar list. A drawing of the play space (not a stock photo). Pickup / preorder at the counter. Discord and Facebook. How Friday night actually works.
 
 ## Pages
 
-- `index.html` — home, hours, tonight, play space, what we carry, new players, buy/sell/trade, contact form.
-- `events.html` — the week as cards, with LocalBusiness + Event JSON-LD.
+- `index.html` — home, hours, this week, play space, what we carry, how nights run, buy/sell/trade, contact form.
+- `events.html` — the week as a calendar list, with LocalBusiness + Event JSON-LD.
 
 Nav is real on both pages.
 
 ## Design notes
 
-Ink background, brass accent, Syne + Outfit. Huge type. Cards pick up a faint pointer glow on fine pointers; `prefers-reduced-motion` turns that off.
+Paper storefront: warm off-white, charcoal type, navy accent. Newsreader for the shop name and headings, Figtree for body. Hours as a table. Events as calendar rows. Form fields are dark text on white inputs.
 
 ## Form
 
@@ -53,7 +53,7 @@ config.js      shop fields (edit this)
 index.html     home
 events.html    this week
 styles.css
-effects.js     OPEN LED, events, schema, nav, glow
+effects.js     hours, events, schema, nav, FormSubmit
 favicon.svg
 README.md
 ```

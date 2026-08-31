@@ -6,8 +6,6 @@
 
   var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   var DAYS_LONG = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(pointer: fine)").matches;
 
   function nowInShop() {
     try {
@@ -133,7 +131,7 @@
       if (i === clock.day) li.className = "is-today";
       var day = document.createElement("span");
       day.className = "day";
-      day.textContent = DAYS_LONG[i].slice(0, 3);
+      day.textContent = DAYS_LONG[i];
       var time = document.createElement("span");
       time.textContent = h ? format12(h.open) + " – " + format12(h.close) : "Closed";
       li.appendChild(day);
@@ -171,43 +169,58 @@
     opts = opts || {};
     var when = nextDateForWeekday(ev.weekday, ev.time, ev.durationMin);
     var article = document.createElement(opts.link ? "a" : "article");
-    article.className = "card";
+    article.className = "event-row";
     if (opts.link) article.setAttribute("href", opts.link);
 
+    var whenEl = document.createElement("div");
+    whenEl.className = "event-when";
+
+    var day = document.createElement("span");
+    day.className = "event-day";
+    day.textContent = when.isToday ? "Today" : DAYS_LONG[ev.weekday];
+
+    var time = document.createElement("span");
+    time.className = "event-time";
+    time.textContent = format12(ev.time);
+
+    whenEl.appendChild(day);
+    whenEl.appendChild(time);
+
+    var body = document.createElement("div");
+    body.className = "event-body";
+
     var game = document.createElement("div");
-    game.className = "card-game";
+    game.className = "event-game";
     game.textContent = ev.game;
 
     var h = document.createElement("h3");
     h.textContent = ev.name;
 
-    var p = document.createElement("p");
-    p.textContent = ev.blurb || "";
+    body.appendChild(game);
+    body.appendChild(h);
+
+    if (ev.blurb) {
+      var p = document.createElement("p");
+      p.textContent = ev.blurb;
+      body.appendChild(p);
+    }
 
     var meta = document.createElement("div");
-    meta.className = "card-meta";
-
-    var dayPill = document.createElement("span");
-    dayPill.className = "pill";
-    dayPill.textContent = (when.isToday ? "Tonight · " : DAYS_LONG[ev.weekday] + " · ") + format12(ev.time);
-    meta.appendChild(dayPill);
+    meta.className = "event-meta";
 
     var fee = document.createElement("span");
-    fee.className = "pill";
     fee.textContent = ev.fee || "Fee TBA";
     meta.appendChild(fee);
 
     if (ev.newPlayerFriendly) {
       var np = document.createElement("span");
-      np.className = "pill pill-new";
       np.textContent = "New-player friendly";
       meta.appendChild(np);
     }
 
-    article.appendChild(game);
-    article.appendChild(h);
-    if (ev.blurb) article.appendChild(p);
-    article.appendChild(meta);
+    body.appendChild(meta);
+    article.appendChild(whenEl);
+    article.appendChild(body);
     return article;
   }
 
@@ -367,17 +380,6 @@
     document.head.appendChild(script);
   }
 
-  function pointerGlow() {
-    if (reduceMotion || !finePointer) return;
-    document.addEventListener("pointermove", function (e) {
-      var card = e.target.closest && e.target.closest(".card");
-      if (!card) return;
-      var r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", e.clientX - r.left + "px");
-      card.style.setProperty("--my", e.clientY - r.top + "px");
-    });
-  }
-
   function nav() {
     var toggle = document.querySelector("[data-nav-toggle]");
     var drawer = document.querySelector("[data-nav-drawer]");
@@ -422,6 +424,5 @@
   renderPolicy();
   setupForm();
   injectJsonLd();
-  pointerGlow();
   nav();
 })();

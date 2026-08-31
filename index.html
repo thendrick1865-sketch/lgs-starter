@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090b">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f5f0e6">
+  <meta name="color-scheme" content="light">
   <title>SHOP_NAME · Your City, CA</title>
   <meta name="description" content="SHOP_NAME in Your City, CA. Hours, this week's events, pickup.">
   <meta property="og:title" content="SHOP_NAME — Your City, CA">
@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,11 +24,10 @@
       <span class="brand-city" data-bind="CITY">Your City, CA</span>
     </a>
     <div class="header-tools">
-      <span class="led" data-led role="status" aria-live="polite">
-        <span class="led-dot" aria-hidden="true"></span>
+      <p class="hours-status" data-led role="status" aria-live="polite">
         <span data-led-status>Hours</span>
-        <span class="led-until" data-led-until></span>
-      </span>
+        <span class="hours-until" data-led-until></span>
+      </p>
       <nav class="nav-desktop" data-nav aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="events.html">Events</a>
@@ -63,8 +62,8 @@
       </div>
     </section>
 
-    <section class="door" aria-labelledby="hours-heading">
-      <div class="door-panel">
+    <section class="hours" aria-labelledby="hours-heading">
+      <div class="hours-panel">
         <div>
           <h2 id="hours-heading">Hours</h2>
           <p>Same times as the sign. If Google is wrong, this is right.</p>
@@ -82,7 +81,7 @@
         </div>
         <a class="btn btn-ghost" href="events.html">Full list</a>
       </div>
-      <div class="cards" data-events-home><noscript><p class="empty-week">Turn on JavaScript to load hours, the OPEN light, and this week from config.js.</p></noscript></div>
+      <div class="event-list" data-events-home><noscript><p class="empty-week">Turn on JavaScript to load hours and this week from config.js.</p></noscript></div>
     </section>
 
     <section class="section" aria-labelledby="room-heading">
@@ -96,21 +95,16 @@
       <figure class="room">
         <svg viewBox="0 0 960 540" role="img" aria-labelledby="room-title room-desc">
           <title id="room-title">Play space — overhead of tables and the counter</title>
-          <desc id="room-desc">A dark shop floor: a long counter, six play tables with mats, and warm ceiling cans. No people.</desc>
+          <desc id="room-desc">A light shop floor: a long counter, six play tables with mats, and windows. No people.</desc>
           <defs>
-            <radialGradient id="can" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#e2b656" stop-opacity="0.22"/>
-              <stop offset="70%" stop-color="#e2b656" stop-opacity="0"/>
-            </radialGradient>
             <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#121318"/>
-              <stop offset="100%" stop-color="#0a0b0e"/>
+              <stop offset="0%" stop-color="#efe6d4"/>
+              <stop offset="100%" stop-color="#e4d8c2"/>
             </linearGradient>
           </defs>
           <rect width="960" height="540" fill="url(#floor)"/>
-          <!-- window wall -->
-          <rect x="36" y="28" width="888" height="10" fill="#1c1e26"/>
-          <g fill="#14151c" stroke="#2a2c36" stroke-width="1.5">
+          <rect x="36" y="28" width="888" height="10" fill="#cbbca4"/>
+          <g fill="#f7f3ea" stroke="#b9ab94" stroke-width="1.5">
             <rect x="48" y="44" width="130" height="72" rx="2"/>
             <rect x="188" y="44" width="130" height="72" rx="2"/>
             <rect x="328" y="44" width="130" height="72" rx="2"/>
@@ -118,74 +112,65 @@
             <rect x="608" y="44" width="130" height="72" rx="2"/>
             <rect x="748" y="44" width="130" height="72" rx="2"/>
           </g>
-          <g opacity="0.35">
-            <rect x="60" y="56" width="106" height="48" fill="#9aa3b5"/>
-            <rect x="200" y="56" width="106" height="48" fill="#9aa3b5"/>
-            <rect x="340" y="56" width="106" height="48" fill="#9aa3b5"/>
-            <rect x="480" y="56" width="106" height="48" fill="#9aa3b5"/>
-            <rect x="620" y="56" width="106" height="48" fill="#9aa3b5"/>
-            <rect x="760" y="56" width="106" height="48" fill="#9aa3b5"/>
+          <g opacity="0.45">
+            <rect x="60" y="56" width="106" height="48" fill="#9eb6c8"/>
+            <rect x="200" y="56" width="106" height="48" fill="#9eb6c8"/>
+            <rect x="340" y="56" width="106" height="48" fill="#9eb6c8"/>
+            <rect x="480" y="56" width="106" height="48" fill="#9eb6c8"/>
+            <rect x="620" y="56" width="106" height="48" fill="#9eb6c8"/>
+            <rect x="760" y="56" width="106" height="48" fill="#9eb6c8"/>
           </g>
-          <!-- ceiling cans -->
-          <ellipse cx="180" cy="210" rx="150" ry="70" fill="url(#can)"/>
-          <ellipse cx="480" cy="250" rx="170" ry="80" fill="url(#can)"/>
-          <ellipse cx="780" cy="210" rx="150" ry="70" fill="url(#can)"/>
-          <ellipse cx="330" cy="400" rx="140" ry="70" fill="url(#can)"/>
-          <ellipse cx="640" cy="400" rx="140" ry="70" fill="url(#can)"/>
-          <!-- counter -->
           <g>
-            <rect x="56" y="150" width="220" height="72" rx="6" fill="#1a1c24" stroke="#3a3d48" stroke-width="1.5"/>
-            <rect x="68" y="162" width="196" height="16" rx="2" fill="#e2b656" opacity="0.35"/>
-            <rect x="78" y="188" width="44" height="22" rx="2" fill="#2a2d38"/>
-            <rect x="130" y="188" width="64" height="22" rx="2" fill="#2a2d38"/>
-            <text x="166" y="204" text-anchor="middle" fill="#c9c3b6" font-family="Outfit, sans-serif" font-size="11" letter-spacing="1.4">COUNTER</text>
+            <rect x="56" y="150" width="220" height="72" rx="4" fill="#1f3f5b" stroke="#173044" stroke-width="1.5"/>
+            <rect x="68" y="162" width="196" height="16" rx="2" fill="#d8cfc0" opacity="0.55"/>
+            <rect x="78" y="188" width="44" height="22" rx="2" fill="#2c5474"/>
+            <rect x="130" y="188" width="64" height="22" rx="2" fill="#2c5474"/>
+            <text x="166" y="204" text-anchor="middle" fill="#f5f0e6" font-family="Newsreader, Palatino, serif" font-size="11">Counter</text>
           </g>
-          <!-- tables -->
           <g id="tables">
             <g transform="translate(340,168)">
-              <rect width="168" height="96" rx="8" fill="#161820" stroke="#3a3328" stroke-width="1.5"/>
-              <rect x="14" y="12" width="140" height="72" rx="4" fill="#1c2430"/>
-              <rect x="28" y="26" width="22" height="31" rx="1.5" fill="#efe8d8" transform="rotate(-8 39 41)"/>
-              <rect x="58" y="24" width="22" height="31" rx="1.5" fill="#efe8d8" transform="rotate(6 69 39)"/>
-              <rect x="96" y="28" width="22" height="31" rx="1.5" fill="#d4c4a0"/>
-              <circle cx="84" cy="48" r="7" fill="#e2b656" opacity="0.45"/>
+              <rect width="168" height="96" rx="6" fill="#d7c4a4" stroke="#b89a72" stroke-width="1.5"/>
+              <rect x="14" y="12" width="140" height="72" rx="3" fill="#e8f0e4"/>
+              <rect x="28" y="26" width="22" height="31" rx="1.5" fill="#fffdf8" transform="rotate(-8 39 41)"/>
+              <rect x="58" y="24" width="22" height="31" rx="1.5" fill="#fffdf8" transform="rotate(6 69 39)"/>
+              <rect x="96" y="28" width="22" height="31" rx="1.5" fill="#ead9b8"/>
+              <circle cx="84" cy="48" r="7" fill="#1f3f5b" opacity="0.35"/>
             </g>
             <g transform="translate(548,168)">
-              <rect width="168" height="96" rx="8" fill="#161820" stroke="#3a3328" stroke-width="1.5"/>
-              <rect x="14" y="12" width="140" height="72" rx="4" fill="#1c2430"/>
-              <rect x="36" y="22" width="96" height="54" rx="3" fill="#243044"/>
-              <rect x="48" y="34" width="18" height="26" rx="1.5" fill="#efe8d8"/>
-              <rect x="102" y="36" width="18" height="26" rx="1.5" fill="#efe8d8"/>
+              <rect width="168" height="96" rx="6" fill="#d7c4a4" stroke="#b89a72" stroke-width="1.5"/>
+              <rect x="14" y="12" width="140" height="72" rx="3" fill="#e8f0e4"/>
+              <rect x="36" y="22" width="96" height="54" rx="3" fill="#d5e0ea"/>
+              <rect x="48" y="34" width="18" height="26" rx="1.5" fill="#fffdf8"/>
+              <rect x="102" y="36" width="18" height="26" rx="1.5" fill="#fffdf8"/>
             </g>
             <g transform="translate(756,168)">
-              <rect width="148" height="96" rx="8" fill="#161820" stroke="#3a3328" stroke-width="1.5"/>
-              <rect x="12" y="12" width="124" height="72" rx="4" fill="#252018"/>
-              <rect x="28" y="28" width="20" height="28" rx="1.5" fill="#efe8d8" transform="rotate(-12 38 42)"/>
-              <rect x="70" y="30" width="20" height="28" rx="1.5" fill="#efe8d8"/>
+              <rect width="148" height="96" rx="6" fill="#d7c4a4" stroke="#b89a72" stroke-width="1.5"/>
+              <rect x="12" y="12" width="124" height="72" rx="3" fill="#efe4d0"/>
+              <rect x="28" y="28" width="20" height="28" rx="1.5" fill="#fffdf8" transform="rotate(-12 38 42)"/>
+              <rect x="70" y="30" width="20" height="28" rx="1.5" fill="#fffdf8"/>
             </g>
             <g transform="translate(340,300)">
-              <rect width="168" height="96" rx="8" fill="#161820" stroke="#3a3328" stroke-width="1.5"/>
-              <rect x="14" y="12" width="140" height="72" rx="4" fill="#1c2430"/>
-              <rect x="22" y="22" width="52" height="52" rx="3" fill="#2a2118"/>
-              <rect x="86" y="22" width="52" height="52" rx="3" fill="#2a2118"/>
+              <rect width="168" height="96" rx="6" fill="#d7c4a4" stroke="#b89a72" stroke-width="1.5"/>
+              <rect x="14" y="12" width="140" height="72" rx="3" fill="#e8f0e4"/>
+              <rect x="22" y="22" width="52" height="52" rx="3" fill="#c9b89a"/>
+              <rect x="86" y="22" width="52" height="52" rx="3" fill="#c9b89a"/>
             </g>
             <g transform="translate(548,300)">
-              <rect width="168" height="96" rx="8" fill="#161820" stroke="#3a3328" stroke-width="1.5"/>
-              <rect x="14" y="12" width="140" height="72" rx="4" fill="#1c2430"/>
-              <circle cx="70" cy="48" r="16" fill="#3a3d48"/>
-              <circle cx="108" cy="48" r="16" fill="#3a3d48"/>
-              <rect x="40" y="38" width="18" height="26" rx="1.5" fill="#efe8d8"/>
+              <rect width="168" height="96" rx="6" fill="#d7c4a4" stroke="#b89a72" stroke-width="1.5"/>
+              <rect x="14" y="12" width="140" height="72" rx="3" fill="#e8f0e4"/>
+              <circle cx="70" cy="48" r="16" fill="#c4b8a4"/>
+              <circle cx="108" cy="48" r="16" fill="#c4b8a4"/>
+              <rect x="40" y="38" width="18" height="26" rx="1.5" fill="#fffdf8"/>
             </g>
             <g transform="translate(756,300)">
-              <rect width="148" height="96" rx="8" fill="#161820" stroke="#3a3328" stroke-width="1.5"/>
-              <rect x="12" y="12" width="124" height="72" rx="4" fill="#1c2430"/>
-              <rect x="24" y="24" width="100" height="14" rx="2" fill="#2e3340"/>
-              <rect x="24" y="46" width="72" height="14" rx="2" fill="#2e3340"/>
-              <rect x="24" y="68" width="88" height="8" rx="2" fill="#e2b656" opacity="0.25"/>
+              <rect width="148" height="96" rx="6" fill="#d7c4a4" stroke="#b89a72" stroke-width="1.5"/>
+              <rect x="12" y="12" width="124" height="72" rx="3" fill="#e8f0e4"/>
+              <rect x="24" y="24" width="100" height="14" rx="2" fill="#d5e0ea"/>
+              <rect x="24" y="46" width="72" height="14" rx="2" fill="#d5e0ea"/>
+              <rect x="24" y="68" width="88" height="8" rx="2" fill="#1f3f5b" opacity="0.2"/>
             </g>
           </g>
-          <!-- chairs as ticks -->
-          <g fill="#2a2c34">
+          <g fill="#c4b8a4">
             <rect x="392" y="152" width="28" height="10" rx="2"/>
             <rect x="432" y="152" width="28" height="10" rx="2"/>
             <rect x="600" y="152" width="28" height="10" rx="2"/>
