@@ -1,24 +1,30 @@
-/* LGS starter — stone storefront. Serif shop sign, black type, no cafe cream, no studio red. */
+/* LGS starter — shop interior after dark. Warm wall, parchment hours sign.
+   Not a Wix blank page. Not Open Tonight (no LED red, no Syne, no pointer glow). */
 :root {
-  --paper: #f6f6f4;
-  --paper-2: #ffffff;
-  --paper-3: #ecece8;
-  --ink: #171717;
-  --ink-soft: #2a2a2a;
-  --muted: #5c5c59;
-  --line: #e3e3de;
-  --line-strong: #c9c9c2;
-  --navy: #171717;
-  --navy-soft: #f0f0ec;
-  --navy-mid: #2e2e2e;
-  --open-ink: #1a6b46;
-  --closed-ink: #5c5c59;
+  --paper: #15120f;
+  --paper-2: #1e1a16;
+  --paper-3: #26211b;
+  --ink: #e7dcc8;
+  --ink-soft: #d4c9b4;
+  --muted: #9a8f7d;
+  --line: rgba(231, 220, 200, 0.14);
+  --line-strong: rgba(231, 220, 200, 0.28);
+  --navy: #e7dcc8;
+  --navy-soft: rgba(212, 165, 116, 0.14);
+  --navy-mid: #c9b89a;
+  --open-ink: #8fbf96;
+  --closed-ink: #9a8f7d;
+  --sign: #e7dcc8;
+  --sign-ink: #1c1814;
+  --sign-muted: #5e564c;
+  --sign-line: #cfc3ad;
+  --lamp: #d4a574;
   --space: clamp(1.35rem, 4.2vw, 3rem);
   --wide: 76rem;
-  --radius: 0.55rem;
+  --radius: 0.2rem;
   --font-display: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 *,
@@ -82,9 +88,10 @@ a:hover { color: var(--ink); }
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 1rem var(--space);
-  background: var(--paper);
+  padding: 1.15rem var(--space);
+  background: color-mix(in srgb, var(--paper) 88%, #000);
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
 }
 
 .brand {
@@ -212,9 +219,32 @@ a:hover { color: var(--ink); }
 main { padding-bottom: 4.5rem; }
 
 .hero {
-  padding: clamp(3.25rem, 10vw, 6.5rem) var(--space) clamp(2rem, 5vw, 3.25rem);
+  position: relative;
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  padding: clamp(2.5rem, 7vw, 5rem) var(--space) clamp(2.25rem, 5vw, 3.5rem);
   max-width: var(--wide);
   margin: 0 auto;
+  align-items: end;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  top: -4rem;
+  width: min(36rem, 70vw);
+  height: 28rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--lamp) 22%, transparent), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-copy,
+.hero .hours-panel { position: relative; z-index: 1; }
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: stretch;
+  }
 }
 
 .kicker {
@@ -266,69 +296,65 @@ main { padding-bottom: 4.5rem; }
   border: 1px solid transparent;
 }
 .btn-primary {
-  background: var(--navy);
-  color: var(--paper-2);
+  background: var(--sign);
+  color: var(--sign-ink);
 }
-.btn-primary:hover { color: var(--paper-2); background: var(--navy-mid); }
+.btn-primary:hover { color: var(--sign-ink); background: #f3eadc; }
 .btn-ghost {
   background: transparent;
   color: var(--ink);
   border-color: var(--line-strong);
 }
-.btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+.btn-ghost:hover { border-color: var(--lamp); color: var(--lamp); }
 
 /* —— hours table —— */
-.hours {
-  margin: 0 auto clamp(2.5rem, 6vw, 4rem);
-  max-width: var(--wide);
-  padding: 0 var(--space);
-}
 .hours-panel {
-  background: var(--paper-2);
-  border: 1px solid var(--line);
+  background: var(--sign);
+  color: var(--sign-ink);
+  border: 1px solid var(--sign-line);
   border-radius: var(--radius);
-  padding: clamp(1.5rem, 3.5vw, 2.15rem);
+  padding: clamp(1.35rem, 3vw, 1.85rem) clamp(1.35rem, 3vw, 1.85rem) 1.1rem;
   display: grid;
-  gap: 1.5rem;
+  gap: 1.1rem;
+  box-shadow:
+    0 24px 50px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
-@media (min-width: 760px) {
-  .hours-panel { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
-}
-.hours h2 {
+.hours-panel h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.4vw, 2.4rem);
+  font-size: clamp(1.7rem, 3vw, 2.1rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.3rem;
+  color: var(--sign-ink);
 }
-.hours p { margin: 0; color: var(--muted); }
+.hours-panel p { margin: 0; color: var(--sign-muted); }
 
 .hours-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--sign-line);
 }
 .hours-list li {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.72rem 0;
-  border-bottom: 1px solid var(--line);
+  padding: 0.62rem 0;
+  border-bottom: 1px solid var(--sign-line);
   font-variant-numeric: tabular-nums;
-  font-size: 1.08rem;
-  color: var(--ink-soft);
+  font-size: 1.05rem;
+  color: var(--sign-ink);
 }
 .hours-list li.is-today {
-  color: var(--ink);
-  font-weight: 600;
-  background: var(--navy-soft);
+  font-weight: 700;
+  background: color-mix(in srgb, var(--lamp) 22%, var(--sign));
   margin: 0 -0.55rem;
   padding-left: 0.55rem;
   padding-right: 0.55rem;
 }
 .hours-list .day {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
 }
 
 /* —— sections —— */
@@ -563,8 +589,8 @@ input, textarea, select {
   padding: 0.7rem 0.9rem;
   border-radius: var(--radius);
   border: 1px solid var(--line-strong);
-  background: #fff;
-  color: var(--ink);
+  background: var(--sign);
+  color: var(--sign-ink);
 }
 input::placeholder,
 textarea::placeholder {
@@ -576,12 +602,12 @@ form button {
   min-height: 3.25rem;
   border: 0;
   border-radius: var(--radius);
-  background: var(--navy);
-  color: var(--paper-2);
+  background: var(--sign);
+  color: var(--sign-ink);
   font-weight: 600;
   padding: 0.65rem 1.05rem;
 }
-form button:hover { background: var(--navy-mid); }
+form button:hover { background: #f3eadc; }
 .form-hint { margin: 0; color: var(--muted); font-size: 0.85rem; }
 
 .site-footer {

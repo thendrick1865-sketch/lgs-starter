@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f6f4">
-  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#15120f">
+  <meta name="color-scheme" content="dark">
   <title>Shop Name · Your City, CA</title>
   <meta name="description" content="Shop Name in Your City, CA. Hours, this week's events, pickup.">
   <meta property="og:title" content="Shop Name — Your City, CA">
@@ -52,24 +52,23 @@
   </nav>
 
   <main id="main">
-    <section class="hero">
-      <p class="kicker"><span data-bind="CITY">Your City, CA</span></p>
-      <h1 data-bind="SHOP_NAME">Shop Name</h1>
-      <p class="lede" data-bind="TAGLINE">Hours, this week's events, pickup at the counter.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="events.html">This week's events</a>
-        <a class="btn btn-ghost" href="#contact">Hours &amp; pickup</a>
+    <section class="hero" id="hours">
+      <div class="hero-copy">
+        <p class="kicker"><span data-bind="CITY">Your City, CA</span></p>
+        <h1 data-bind="SHOP_NAME">Shop Name</h1>
+        <p class="lede" data-bind="TAGLINE">Hours, this week's events, pickup at the counter.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="events.html">This week's events</a>
+          <a class="btn btn-ghost" href="#contact">Pickup</a>
+        </div>
       </div>
-    </section>
-
-    <section class="hours" aria-labelledby="hours-heading">
-      <div class="hours-panel">
+      <aside class="hours-panel" aria-labelledby="hours-heading">
         <div>
           <h2 id="hours-heading">Hours</h2>
           <p>Same times as the sign. If Google is wrong, this is right.</p>
         </div>
         <ul class="hours-list" data-hours></ul>
-      </div>
+      </aside>
     </section>
 
     <section class="section" aria-labelledby="tonight-heading">

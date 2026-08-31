@@ -36,7 +36,7 @@ Nav is real on both pages.
 
 ## Design notes
 
-Stone storefront: near-white, black type. Source Serif 4 for the shop name and headings, Source Sans 3 for body. Hours as a table. Events as calendar rows. Form fields are dark text on white inputs.
+Shop interior after dark: warm wall, parchment hours sign on the first screen. Source Serif 4 and Source Sans 3. Not a blank template. Form fields are dark text on parchment.
 
 ## Form
 
