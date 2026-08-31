@@ -32,7 +32,7 @@
         <a href="index.html">Home</a>
         <a href="events.html">Events</a>
         <a href="index.html#carry">What we carry</a>
-        <a href="index.html#new">New players</a>
+        <a href="index.html#new">How nights run</a>
         <a href="index.html#trade">Buy / sell</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -46,7 +46,7 @@
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
     <a href="index.html#carry">What we carry</a>
-    <a href="index.html#new">New players</a>
+    <a href="index.html#new">How nights run</a>
     <a href="index.html#trade">Buy / sell / trade</a>
     <a href="index.html#contact">Contact</a>
   </nav>
@@ -55,10 +55,10 @@
     <section class="hero page-hero">
       <p class="kicker">This week</p>
       <h1>Events</h1>
-      <p class="lede">Name, game, day and time, fee, and whether it is built for new players. Recurring weekly from config.js — not a ticket marketplace.</p>
+      <p class="lede">Name, game, day, time, fee. Pulled from config.js so the calendar is the source of truth.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="index.html#new">First time here?</a>
-        <a class="btn btn-ghost" href="index.html#contact">Ask the counter</a>
+        <a class="btn btn-primary" href="index.html#contact">Hours &amp; contact</a>
+        <a class="btn btn-ghost" href="index.html">Home</a>
       </div>
     </section>
 
@@ -66,7 +66,7 @@
       <div class="section-head">
         <div>
           <h2 id="week-heading">On the calendar</h2>
-          <p class="sub">Sorted from today. LocalBusiness plus Event schema ships in the page for search.</p>
+          <p class="sub">This week, from the shop calendar.</p>
         </div>
       </div>
       <div class="cards cards-3" data-events-all><noscript><p class="empty-week">Turn on JavaScript to load this week from config.js.</p></noscript></div>
@@ -75,7 +75,7 @@
 
   <footer class="site-footer">
     <span><strong data-bind="SHOP_NAME">SHOP_NAME</strong> · <span data-bind="CITY">Your City, CA</span></span>
-    <span>Starter template · swap the fields in config.js</span>
+    <span data-bind="TAGLINE">Hours, this week's events, pickup at the counter.</span>
   </footer>
 
   <script src="config.js"></script>

@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#08090b">
   <meta name="color-scheme" content="dark">
   <title>SHOP_NAME · Your City, CA</title>
-  <meta name="description" content="SHOP_NAME in Your City, CA. Hours, this week's events, pickup, and the play space.">
+  <meta name="description" content="SHOP_NAME in Your City, CA. Hours, this week's events, pickup.">
   <meta property="og:title" content="SHOP_NAME — Your City, CA">
-  <meta property="og:description" content="Hours that match the door. This week's events. A table waiting.">
+  <meta property="og:description" content="Hours, this week's events, pickup at the counter.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
         <a href="index.html">Home</a>
         <a href="events.html">Events</a>
         <a href="index.html#carry">What we carry</a>
-        <a href="index.html#new">New players</a>
+        <a href="index.html#new">How nights run</a>
         <a href="index.html#trade">Buy / sell</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -47,7 +47,7 @@
     <a href="index.html">Home</a>
     <a href="events.html">Events</a>
     <a href="index.html#carry">What we carry</a>
-    <a href="index.html#new">New players</a>
+    <a href="index.html#new">How nights run</a>
     <a href="index.html#trade">Buy / sell / trade</a>
     <a href="index.html#contact">Contact</a>
   </nav>
@@ -56,7 +56,7 @@
     <section class="hero">
       <p class="kicker"><span data-bind="CITY">Your City, CA</span></p>
       <h1 data-bind="SHOP_NAME">SHOP_NAME</h1>
-      <p class="lede" data-bind="TAGLINE">Cards, minis, and a table waiting.</p>
+      <p class="lede" data-bind="TAGLINE">Hours, this week's events, pickup at the counter.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="events.html">This week's events</a>
         <a class="btn btn-ghost" href="#contact">Hours &amp; pickup</a>
@@ -66,8 +66,8 @@
     <section class="door" aria-labelledby="hours-heading">
       <div class="door-panel">
         <div>
-          <h2 id="hours-heading">Hours that match the door</h2>
-          <p>If the LED says open, the room is open. Same times we put on the glass.</p>
+          <h2 id="hours-heading">Hours</h2>
+          <p>Same times as the sign. If Google is wrong, this is right.</p>
         </div>
         <ul class="hours-list" data-hours></ul>
       </div>
@@ -77,8 +77,8 @@
       <div class="section-head">
         <div>
           <p class="kicker" data-events-kicker>This week</p>
-          <h2 id="tonight-heading">On the tables</h2>
-          <p class="sub">Tonight if we're running something. Otherwise the next few seats this week.</p>
+          <h2 id="tonight-heading">This week</h2>
+          <p class="sub">What the shop is running. Edit EVENTS in config.js.</p>
         </div>
         <a class="btn btn-ghost" href="events.html">Full list</a>
       </div>
@@ -90,7 +90,7 @@
         <div>
           <p class="kicker">The room</p>
           <h2 id="room-heading">Play space</h2>
-          <p class="sub">Tables, light, a counter. Not a stock photo of a fake store.</p>
+          <p class="sub">Swap this drawing for photos of the actual tables.</p>
         </div>
       </div>
       <figure class="room">
@@ -196,16 +196,16 @@
             <rect x="600" y="404" width="28" height="10" rx="2"/>
           </g>
         </svg>
-        <figcaption class="room-caption">Play space · no stock photos</figcaption>
+        <figcaption class="room-caption">Replace with phone photos of the room</figcaption>
       </figure>
     </section>
 
     <section class="section" id="carry" aria-labelledby="carry-heading">
       <div class="section-head">
         <div>
-          <p class="kicker">On the wall</p>
+          <p class="kicker">Stock</p>
           <h2 id="carry-heading">What we carry</h2>
-          <p class="sub">What we keep on the wall and behind the counter. Need a single? Ask.</p>
+          <p class="sub">Categories the shop stocks. Singles at the counter.</p>
         </div>
       </div>
       <div class="carry-grid" data-carry></div>
@@ -213,8 +213,8 @@
     </section>
 
     <section class="section" id="new" aria-labelledby="new-heading" data-new-players>
-      <p class="kicker" data-np-kicker>Your first Friday</p>
-      <h2 id="new-heading" data-np-title>Show up. We'll get you a seat.</h2>
+      <p class="kicker" data-np-kicker>How nights run</p>
+      <h2 id="new-heading" data-np-title>Seats, entry, start time.</h2>
       <div class="prose" data-np-body></div>
     </section>
 
@@ -229,9 +229,9 @@
     <section class="section" id="contact" aria-labelledby="contact-heading">
       <div class="section-head">
         <div>
-          <p class="kicker">Come by</p>
+          <p class="kicker">The shop</p>
           <h2 id="contact-heading">Contact</h2>
-          <p class="sub">Address, hours, a human inbox. Discord and Facebook for the weekly ping.</p>
+          <p class="sub">Address, phone, hours. Discord and Facebook if the shop uses them.</p>
         </div>
       </div>
       <div class="contact-grid">
@@ -269,7 +269,7 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="">
-          <p class="form-hint">FormSubmit-ready. Uses the shop email in config.js. Or ignore the form and hit mailto.</p>
+          <p class="form-hint">Goes to the shop email in config.js.</p>
           <label>
             Name
             <input type="text" name="name" autocomplete="name" required>
@@ -300,7 +300,7 @@
 
   <footer class="site-footer">
     <span><strong data-bind="SHOP_NAME">SHOP_NAME</strong> · <span data-bind="CITY">Your City, CA</span></span>
-    <span>Starter template · swap the fields in config.js</span>
+    <span data-bind="TAGLINE">Hours, this week's events, pickup at the counter.</span>
   </footer>
 
   <script src="config.js"></script>

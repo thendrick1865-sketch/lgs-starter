@@ -7,7 +7,7 @@
  */
 window.SHOP = {
   SHOP_NAME: "SHOP_NAME",
-  TAGLINE: "Cards, minis, and a table waiting.",
+  TAGLINE: "Hours, this week's events, pickup at the counter.",
   CITY: "Your City, CA",
   ADDRESS: "123 Placeholder Ave, Your City, CA 00000",
   PHONE: "(555) 010-0140",
@@ -41,7 +41,7 @@ window.SHOP = {
       durationMin: 180,
       fee: "Free",
       newPlayerFriendly: true,
-      blurb: "Bring a deck or ask the counter for a loaner. Pods form at 6:30."
+      blurb: "Pods at 6:30. Loaner decks at the counter."
     },
     {
       name: "Friday Night Magic",
@@ -51,7 +51,7 @@ window.SHOP = {
       durationMin: 180,
       fee: "$10",
       newPlayerFriendly: true,
-      blurb: "Standard. Show up a little early — we'll pair you if you're new."
+      blurb: "Standard. Pairings at 7. $10 at the counter."
     },
     {
       name: "Pokémon League",
@@ -61,7 +61,7 @@ window.SHOP = {
       durationMin: 180,
       fee: "$5",
       newPlayerFriendly: true,
-      blurb: "Casual league, then a short constructed flight if we have the numbers."
+      blurb: "League, then constructed if we have the numbers."
     },
     {
       name: "Lorcana Learn-to-Play",
@@ -71,7 +71,7 @@ window.SHOP = {
       durationMin: 120,
       fee: "Free",
       newPlayerFriendly: true,
-      blurb: "Demo decks on us. Stay for a pickup game after."
+      blurb: "Demo decks at the counter. Pickup games after."
     },
     {
       name: "Sunday Board Game Open",
@@ -81,7 +81,7 @@ window.SHOP = {
       durationMin: 240,
       fee: "Free",
       newPlayerFriendly: true,
-      blurb: "Library games on the tables. Ask us to teach one."
+      blurb: "Library games out. Teaching at the counter if you ask."
     }
   ],
 
@@ -98,15 +98,15 @@ window.SHOP = {
     "Preorder at the counter. We text you when your box is in. Already in the shop? Just grab it.",
 
   NEW_PLAYERS: {
-    kicker: "Your first Friday",
-    title: "Show up. We'll get you a seat.",
+    kicker: "How nights run",
+    title: "Seats, entry, start time.",
     grafs: [
-      "Friday night is loud in a good way. Come twenty minutes early, tell the counter you're new, and that's the whole secret.",
-      "You do not need a complete deck. We keep loaners and extra lands. Entry is cash or card. Bring a water bottle. That's the packing list.",
-      "Nobody is grading your plays. If a rule is fuzzy, raise a hand — a judge or a regular will walk it. The tone is: you belong here tonight."
+      "Events start at the time on the calendar. Counter takes entry. If we have loaners, they live there too.",
+      "Doors match the hours on this page. If Google says something else, this page is right.",
+      "Trade and collections by appointment. Preorder and pickup at the counter."
     ]
   },
 
   POLICY:
-    "We buy collections by appointment and take trade toward sealed or singles. Condition and demand set the number — we'll walk you through it at the counter, not over a mystery form. Placeholder policy: fair, in person, and we'll say no if we can't do right by the cards."
+    "Collections by appointment. Trade at the counter. We price in person."
 };
