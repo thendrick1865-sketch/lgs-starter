@@ -2,11 +2,11 @@
  * LGS STARTER — swap these fields, then it's a pitch mock.
  * Open index.html in a browser. No build step.
  *
- * Sample values are obviously placeholders (SHOP_NAME, Your City, CA).
+ * Sample values are obviously placeholders (Shop Name, Your City, CA).
  * Do not ship this file with a real shop's name until you mean to.
  */
 window.SHOP = {
-  SHOP_NAME: "SHOP_NAME",
+  SHOP_NAME: "Shop Name",
   TAGLINE: "Hours, this week's events, pickup at the counter.",
   CITY: "Your City, CA",
   ADDRESS: "123 Placeholder Ave, Your City, CA 00000",

@@ -2,7 +2,7 @@
 
 A reusable static front door for a tiny local game shop (LGS / TCG / hobby). Clone it for a pitch. Open `index.html`. No build step.
 
-This is a **template**. Sample copy is obviously fake: `SHOP_NAME`, `Your City, CA`, `(555) 010-0140`. It is not a live catalog, not an ads landing page, and not an agency site.
+This is a **template**. Sample copy is obviously fake: `Shop Name`, `Your City, CA`, `(555) 010-0140`. It is not a live catalog, not an ads landing page, and not an agency site.
 
 ## Swap these 10 fields before a walk-in
 

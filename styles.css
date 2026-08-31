@@ -48,6 +48,7 @@ img, svg { max-width: 100%; display: block; }
 
 a {
   color: var(--navy);
+  text-decoration: none;
   text-underline-offset: 0.18em;
 }
 
