@@ -16,8 +16,8 @@
   --space: clamp(1.1rem, 3.2vw, 2rem);
   --wide: 68rem;
   --radius: 0.45rem;
-  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-  --font-body: "Figtree", "Source Sans 3", "Segoe UI", sans-serif;
+  --font-display: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   color-scheme: light;
 }
 
@@ -39,7 +39,9 @@ body {
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 img, svg { max-width: 100%; display: block; }
@@ -224,9 +226,9 @@ main { padding-bottom: 3.5rem; }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   font-size: clamp(2.15rem, 6.5vw, 3.6rem);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   line-height: 1.08;
   margin: 0 0 0.85rem;
   max-width: 100%;
