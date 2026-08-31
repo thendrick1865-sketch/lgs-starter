@@ -91,11 +91,11 @@ window.SHOP = {
     { name: "Disney Lorcana", note: "Sealed and learn-to-play decks." },
     { name: "Miniatures", note: "Paints, terrain basics, and a table to build." },
     { name: "Board games", note: "New releases and a play-library shelf." },
-    { name: "Singles by request", note: "Not a live inventory feed. Text or ask the counter." }
+    { name: "Singles", note: "Ask at the counter. We'll look it up." }
   ],
 
   PREORDER_NOTE:
-    "Preorders and pickup live at the counter — not a 10,000-SKU catalog. We text when your box is in.",
+    "Preorder at the counter. We text you when your box is in. Already in the shop? Just grab it.",
 
   NEW_PLAYERS: {
     kicker: "Your first Friday",
