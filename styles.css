@@ -1,5 +1,5 @@
-/* LGS starter — shop interior after dark. Warm wall, parchment hours sign.
-   Not a Wix blank page. Not Open Tonight (no LED red, no Syne, no pointer glow). */
+/* LGS starter kit. Not a finished brand.
+   THEME — change these tokens per shop. Do not rewrite the layout for a first clone. */
 :root {
   --paper: #15120f;
   --paper-2: #1e1a16;
@@ -219,7 +219,6 @@ a:hover { color: var(--ink); }
 main { padding-bottom: 4.5rem; }
 
 .hero {
-  position: relative;
   display: grid;
   gap: clamp(1.75rem, 4vw, 3rem);
   padding: clamp(2.5rem, 7vw, 5rem) var(--space) clamp(2.25rem, 5vw, 3.5rem);
@@ -227,19 +226,6 @@ main { padding-bottom: 4.5rem; }
   margin: 0 auto;
   align-items: end;
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  left: 8%;
-  top: -4rem;
-  width: min(36rem, 70vw);
-  height: 28rem;
-  background: radial-gradient(circle, color-mix(in srgb, var(--lamp) 22%, transparent), transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-.hero-copy,
-.hero .hours-panel { position: relative; z-index: 1; }
 @media (min-width: 900px) {
   .hero {
     grid-template-columns: 1.05fr 0.95fr;
@@ -316,9 +302,7 @@ main { padding-bottom: 4.5rem; }
   padding: clamp(1.35rem, 3vw, 1.85rem) clamp(1.35rem, 3vw, 1.85rem) 1.1rem;
   display: grid;
   gap: 1.1rem;
-  box-shadow:
-    0 24px 50px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  box-shadow: none;
 }
 .hours-panel h2 {
   font-family: var(--font-display);

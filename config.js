@@ -1,9 +1,9 @@
 /**
- * LGS STARTER — swap these fields, then it's a pitch mock.
- * Open index.html in a browser. No build step.
+ * Fill this file for the shop in front of you.
+ * Duplicate the kit, change these fields, publish. Restyle tokens in styles.css
+ * only if their room needs a different look.
  *
- * Sample values are obviously placeholders (Shop Name, Your City, CA).
- * Do not ship this file with a real shop's name until you mean to.
+ * Sample values stay fake on purpose. Do not ship them.
  */
 window.SHOP = {
   SHOP_NAME: "Shop Name",

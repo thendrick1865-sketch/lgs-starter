@@ -1,59 +1,54 @@
 # LGS starter
 
-A reusable static front door for a tiny local game shop (LGS / TCG / hobby). Clone it for a pitch. Open `index.html`. No build step.
+A cloneable kit for a tiny local game shop site. Not a finished brand. Not Open Tonight.
 
-This is a **template**. Sample copy is obviously fake: `Shop Name`, `Your City, CA`, `(555) 010-0140`. It is not a live catalog, not an ads landing page, and not an agency site.
+You take this to a shop, fill `config.js`, and either:
 
-## Swap these 10 fields before a walk-in
+1. **New site** — clone the repo, swap the fields, restyle the tokens in `styles.css` if their room needs a different look.
+2. **Rescue** — same files, dropped in place of a dead or broken shop page. Hours, this week, call, directions, contact. No catalog.
 
-All of them live in `config.js` as `window.SHOP`.
+Open `index.html`. No build step.
 
-1. **SHOP_NAME** — the words on the glass.
-2. **TAGLINE** — one line under the name.
-3. **CITY** — e.g. still `Your City, CA` until you mean it.
-4. **ADDRESS** — street line as it should appear on a map pin.
-5. **PHONE** — shown and used as `tel:`.
-6. **EMAIL** — mailto plus the FormSubmit action.
-7. **HOURS** — door hours, Sun–Sat, 24h `open` / `close`. Use `null` for a closed day.
-8. **DISCORD** — invite URL.
-9. **FACEBOOK** — page URL. (Instagram is next to it in the same file.)
-10. **MAPS_URL** — Google Maps placeholder / real pin.
+Sample values (`Shop Name`, `Your City, CA`, `(555) 010-0140`) stay fake on purpose. Do not ship them.
 
-Then, still in `config.js`, fill **EVENTS** (name, game, weekday, time, fee, new-player flag) so this week is not empty. Optional: **CARRY**, **NEW_PLAYERS**, **POLICY**, **PREORDER_NOTE**, **TIMEZONE**.
+## Per shop, in this order
 
-`TIMEZONE` defaults to `America/Los_Angeles` so Open / Closed matches a California door. Change it if the shop is not on Pacific time.
+1. Duplicate the folder / clone the repo.
+2. Edit **`config.js` only** for name, city, address, phone, email, hours, events, maps, Discord/Facebook.
+3. If their look is different, change the **THEME** block at the top of `styles.css`. Leave the HTML structure.
+4. Confirm the FormSubmit email once. Publish (GitHub Pages is fine).
 
-## What the owner should feel on a phone
+That is the whole product. Do not pre-build a stack of fake client sites.
 
-Hours that match the door. Plain Open / Closed text. Tonight / this week as a calendar list. A drawing of the play space (not a stock photo). Pickup / preorder at the counter. Discord and Facebook. How Friday night actually works.
+## `config.js`
+
+`window.SHOP`:
+
+- **SHOP_NAME**, **TAGLINE**, **CITY**, **ADDRESS**, **PHONE**, **EMAIL**
+- **HOURS** — Sun–Sat, 24h `open` / `close`. `null` = closed that day.
+- **EVENTS** — name, game, weekday (0=Sun), time, fee, blurb
+- **DISCORD**, **FACEBOOK**, **INSTAGRAM**, **MAPS_URL**
+- Optional: **CARRY**, **NEW_PLAYERS**, **POLICY**, **PREORDER_NOTE**, **TIMEZONE** (default `America/Los_Angeles`)
+
+The page binds those fields: open/closed, hours table, this week, call, directions, form, JSON-LD.
 
 ## Pages
 
-- `index.html` — home, hours, this week, play space, what we carry, how nights run, buy/sell/trade, contact form.
-- `events.html` — the week as a calendar list, with LocalBusiness + Event JSON-LD.
-
-Nav is real on both pages.
-
-## Design notes
-
-Shop interior after dark: warm wall, parchment hours sign on the first screen. Source Serif 4 and Source Sans 3. Not a blank template. Form fields are dark text on parchment.
-
-## Form
-
-The contact form posts to [FormSubmit](https://formsubmit.co/) using `EMAIL` from config. Confirm the address once in FormSubmit’s email handshake, or skip the form and use the mailto link.
-
-## What this is not
-
-A 10,000-SKU inventory. A live singles feed. Meta ads. Neon esports. A wiki.
+- `index.html` — hours, this week, play space, carry, how nights run, buy/sell, contact
+- `events.html` — the week
 
 ## Files
 
 ```
-config.js      shop fields (edit this)
-index.html     home
-events.html    this week
-styles.css
-effects.js     hours, events, schema, nav, FormSubmit
+config.js      fill this per shop
+styles.css     THEME tokens at the top, then layout
+effects.js     hours, events, form, schema
+index.html
+events.html
 favicon.svg
 README.md
 ```
+
+## What this is not
+
+A 10,000-SKU inventory. A live singles feed. Meta ads. A locked look for every shop. Open Tonight.
