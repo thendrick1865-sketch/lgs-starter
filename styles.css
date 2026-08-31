@@ -13,9 +13,9 @@
   --navy-mid: #2c5474;
   --open-ink: #1f3f5b;
   --closed-ink: #6a6358;
-  --space: clamp(1.1rem, 3.2vw, 2rem);
-  --wide: 68rem;
-  --radius: 0.45rem;
+  --space: clamp(1.35rem, 4.2vw, 3rem);
+  --wide: 76rem;
+  --radius: 0.55rem;
   --font-display: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
   --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   color-scheme: light;
@@ -37,7 +37,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.55;
   font-optical-sizing: auto;
   -webkit-font-smoothing: auto;
@@ -81,7 +81,7 @@ a:hover { color: var(--ink); }
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.75rem var(--space);
+  padding: 1rem var(--space);
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
@@ -96,8 +96,8 @@ a:hover { color: var(--ink); }
 }
 .brand-name {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.12rem;
+  font-weight: 700;
+  font-size: 1.28rem;
   letter-spacing: -0.02em;
   line-height: 1.15;
   white-space: nowrap;
@@ -107,7 +107,7 @@ a:hover { color: var(--ink); }
 }
 .brand-city {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
 }
 
 .header-tools {
@@ -120,8 +120,8 @@ a:hover { color: var(--ink); }
   margin: 0;
   display: inline-flex;
   align-items: baseline;
-  gap: 0.4rem;
-  font-size: 0.88rem;
+  gap: 0.45rem;
+  font-size: 1.02rem;
   color: var(--ink-soft);
   white-space: nowrap;
 }
@@ -195,42 +195,43 @@ a:hover { color: var(--ink); }
   .nav-desktop a {
     color: var(--ink-soft);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1.02rem;
     font-weight: 500;
-    padding: 0.45rem 0;
-    min-height: 2.5rem;
+    padding: 0.5rem 0;
+    min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
   }
   .nav-desktop a[aria-current="page"],
   .nav-desktop a:hover { color: var(--navy); }
-  .brand-name { max-width: none; font-size: 1.2rem; }
+  .brand-name { max-width: none; font-size: 1.42rem; }
 }
 
 /* —— layout —— */
-main { padding-bottom: 3.5rem; }
+main { padding-bottom: 4.5rem; }
 
 .hero {
-  padding: clamp(2rem, 6vw, 3.75rem) var(--space) clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(3.25rem, 10vw, 6.5rem) var(--space) clamp(2rem, 5vw, 3.25rem);
   max-width: var(--wide);
   margin: 0 auto;
 }
 
 .kicker {
   color: var(--muted);
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   font-weight: 600;
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.85rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.15rem, 6.5vw, 3.6rem);
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-  margin: 0 0 0.85rem;
+  font-size: clamp(3.1rem, 9vw, 5.4rem);
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  margin: 0 0 1.1rem;
   max-width: 100%;
   overflow-wrap: normal;
   word-break: keep-all;
@@ -239,28 +240,28 @@ main { padding-bottom: 3.5rem; }
 }
 
 .lede {
-  max-width: 36rem;
-  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  max-width: 40rem;
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   color: var(--ink-soft);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.85rem;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.75rem;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.6rem 1.05rem;
+  min-height: 3.25rem;
+  padding: 0.8rem 1.4rem;
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   border: 1px solid transparent;
 }
 .btn-primary {
@@ -277,7 +278,7 @@ main { padding-bottom: 3.5rem; }
 
 /* —— hours table —— */
 .hours {
-  margin: 0 auto clamp(2rem, 5vw, 3rem);
+  margin: 0 auto clamp(2.5rem, 6vw, 4rem);
   max-width: var(--wide);
   padding: 0 var(--space);
 }
@@ -285,19 +286,19 @@ main { padding-bottom: 3.5rem; }
   background: var(--paper-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: clamp(1.1rem, 3vw, 1.5rem);
+  padding: clamp(1.5rem, 3.5vw, 2.15rem);
   display: grid;
-  gap: 1.15rem;
+  gap: 1.5rem;
 }
 @media (min-width: 760px) {
   .hours-panel { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
 }
 .hours h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.45rem, 3vw, 1.85rem);
-  font-weight: 600;
+  font-size: clamp(1.85rem, 3.4vw, 2.4rem);
+  font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.4rem;
 }
 .hours p { margin: 0; color: var(--muted); }
 
@@ -311,9 +312,10 @@ main { padding-bottom: 3.5rem; }
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.48rem 0;
+  padding: 0.72rem 0;
   border-bottom: 1px solid var(--line);
   font-variant-numeric: tabular-nums;
+  font-size: 1.08rem;
   color: var(--ink-soft);
 }
 .hours-list li.is-today {
@@ -325,14 +327,14 @@ main { padding-bottom: 3.5rem; }
   padding-right: 0.55rem;
 }
 .hours-list .day {
-  font-size: 0.95rem;
+  font-size: 1.08rem;
 }
 
 /* —— sections —— */
 .section {
   max-width: var(--wide);
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 3.5rem) var(--space) 0;
+  padding: clamp(2.75rem, 7vw, 4.75rem) var(--space) 0;
 }
 .section-head {
   display: flex;
@@ -344,8 +346,8 @@ main { padding-bottom: 3.5rem; }
 }
 .section h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.65rem, 4vw, 2.25rem);
-  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.12;
   margin: 0;
@@ -368,7 +370,7 @@ main { padding-bottom: 3.5rem; }
   background: var(--paper-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1rem 1.1rem;
+  padding: 1.25rem 1.35rem;
   text-decoration: none;
   color: inherit;
 }
@@ -390,8 +392,8 @@ a.event-row:hover {
 }
 .event-day {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
+  font-weight: 700;
+  font-size: 1.35rem;
   color: var(--navy);
   line-height: 1.2;
 }
@@ -403,14 +405,14 @@ a.event-row:hover {
 
 .event-body h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin: 0 0 0.25rem;
 }
 .event-game {
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--muted);
   margin-bottom: 0.15rem;
@@ -418,7 +420,7 @@ a.event-row:hover {
 .event-body p {
   margin: 0 0 0.45rem;
   color: var(--ink-soft);
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 .event-meta {
   display: flex;
@@ -483,8 +485,8 @@ a.event-row:hover {
 }
 .carry-item h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 0.3rem;
 }
@@ -500,8 +502,8 @@ a.event-row:hover {
 
 /* —— prose blocks —— */
 .prose {
-  max-width: 40rem;
-  font-size: 1.08rem;
+  max-width: 42rem;
+  font-size: 1.18rem;
   color: var(--ink-soft);
 }
 .prose p { margin: 0 0 1rem; }
@@ -523,12 +525,12 @@ a.event-row:hover {
 .vcard a { color: var(--ink); text-decoration: none; }
 .vcard a:hover { color: var(--navy); }
 .vcard dt {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--muted);
   margin-bottom: 0.15rem;
 }
-.vcard dd { margin: 0; font-size: 1.08rem; }
+.vcard dd { margin: 0; font-size: 1.2rem; }
 .socials {
   display: flex;
   flex-wrap: wrap;
@@ -556,8 +558,8 @@ input, textarea, select, button {
 }
 input, textarea, select {
   width: 100%;
-  min-height: 2.75rem;
-  padding: 0.6rem 0.75rem;
+  min-height: 3.15rem;
+  padding: 0.7rem 0.9rem;
   border-radius: var(--radius);
   border: 1px solid var(--line-strong);
   background: #fff;
@@ -570,7 +572,7 @@ textarea::placeholder {
 textarea { min-height: 8rem; resize: vertical; }
 form button {
   cursor: pointer;
-  min-height: 2.75rem;
+  min-height: 3.25rem;
   border: 0;
   border-radius: var(--radius);
   background: var(--navy);
@@ -595,7 +597,7 @@ form button:hover { background: var(--navy-mid); }
 .site-footer strong { color: var(--ink-soft); font-weight: 600; }
 
 .page-hero {
-  padding-top: clamp(1.75rem, 5vw, 2.8rem);
+  padding-top: clamp(2.4rem, 7vw, 4.2rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
